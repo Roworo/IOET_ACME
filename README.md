@@ -23,7 +23,7 @@ All the requirements are described on the email
 9. Display the results
 10. If want to calculate other, return to step 2, if not, finish
 
-![Flowchart](https://user-images.githubusercontent.com/80548918/215858820-4b041def-7985-4081-afbc-803695bb8181.png)
+![Flowchart](https://user-images.githubusercontent.com/80548918/215859412-92d19670-a3c8-4f1a-8823-1c6773a6cffc.png)
 
 ### Technologies to use
 
