@@ -23,6 +23,8 @@ All the requirements are described on the email
 9. Display the results
 10. If want to calculate other, return to step 2, if not, finish
 
+![Flowchart](https://user-images.githubusercontent.com/80548918/215858820-4b041def-7985-4081-afbc-803695bb8181.png)
+
 ### Technologies to use
 
 Because the software requirements are not that complex, and it should be able to run without any installation or use of package manager, it was decided to use HTML5 for the DOM, CSS3 for styling and Vanilla JavaScript so it can run on any modern browser. Because on the requirements it was explicitly said that the use of external libraries is not allowed, so CSS Frameworks such as bootstrap or JS libraries as JQuery won't be used. As said before, because the software requeriments are not complex, typical JS architecture will be used, where UI is placed at the center of the development.
