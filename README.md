@@ -1,5 +1,7 @@
 # ACME EXERCISE
 
+### Description
+
 This program will solve the problem posted by IOET on payment calculation according to hours worked
 
 ## Solution
@@ -25,11 +27,13 @@ All the requirements are described on the email
 
 Because the software requirements are not that complex, and it should be able to run without any installation or use of package manager, it was decided to use HTML5 for the DOM, CSS3 for styling and Vanilla JavaScript so it can run on any modern browser. Because on the requirements it was explicitly said that the use of external libraries is not allowed, so CSS Frameworks such as bootstrap or JS libraries as JQuery won't be used. As said before, because the software requeriments are not complex, typical JS architecture will be used, where UI is placed at the center of the development.
 
-## Usage
+## Installation and Usage
 
 Download/Clone the files on the repository, and then open the index.html file with preferred browser.
 
 Upload your .txt file on the format NAME=DDHH:MM-HH:MM,DDHH:MM-HH:MM, our you can use the sample file on the repository.
+
+https://user-images.githubusercontent.com/80548918/215854305-74b1532f-92ea-4ede-bb10-6c26fcb0471d.mp4
 
 ### Testing
 
