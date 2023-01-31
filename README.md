@@ -31,7 +31,7 @@ Because the software requirements are not that complex, and it should be able to
 
 Download/Clone the files on the repository, and then open the index.html file with preferred browser.
 
-Upload your .txt file on the format NAME=DDHH:MM-HH:MM,DDHH:MM-HH:MM, our you can use the sample file on the repository.
+Upload your .txt file on the format NAME=DDHH:MM-HH:MM,DDHH:MM-HH:MM, or you can use the sample file on the repository.
 
 https://user-images.githubusercontent.com/80548918/215854305-74b1532f-92ea-4ede-bb10-6c26fcb0471d.mp4
 
