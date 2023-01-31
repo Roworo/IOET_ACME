@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IOET Payment Calculator</title>
+
+    <script type="text/javascript" src="./scripts/script.js"></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <header>ACME Payment Calculator</header>
+    <div class="wrapper">
+      <div class="input-wrapper">
+        <label class="custom-file-upload">
+          <input type="file" id="fileUpload" accept=".txt" />
+        </label>
+
+        <button onclick="getPayments()">Calculate</button>
+      </div>
+      <p style="margin-bottom: 5px">File extension: .txt</p>
+      <p style="margin-top: 5px">
+        File Format: NAME:DDHH:MM-HH:MM,DDHH:MM-HH:MM
+      </p>
+      <p id="error-message" class="error"></p>
+      <ul id="list-results"></ul>
+    </div>
+    <footer></footer>
+  </body>
+</html>
