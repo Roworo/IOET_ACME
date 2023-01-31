@@ -171,3 +171,133 @@ const getDayPayment = (hoursRef, workerHours) => {
     throw new Error("Error calculating payment, review hours");
   }
 };
+
+//******************************************************* */
+//TESTS
+//******************************************************* */
+(function () {
+  "use strict";
+
+  /**
+   * test function
+   * @param {string} desc
+   * @param {function} fn
+   */
+  function it(desc, fn) {
+    try {
+      fn();
+      console.log("\x1b[32m%s\x1b[0m", "\u2714 " + desc);
+    } catch (error) {
+      console.log("\n");
+      console.log("\x1b[31m%s\x1b[0m", "\u2718 " + desc);
+      console.error(error);
+    }
+  }
+
+  function compareObjects(element1, element2) {
+    return JSON.stringify(element1) === JSON.stringify(element2);
+  }
+
+  it("Get Day Payment works as expected", () => {
+    const mockedWorkerHours = {
+      start: 10,
+      end: 11,
+    };
+    const mockedResult = getDayPayment(
+      referenceTable[0].hours,
+      mockedWorkerHours
+    );
+
+    if (mockedResult !== 15) throw new Error();
+  });
+
+  it("Get Worker Payment works as expected", () => {
+    const mockedWorkerSchedule = [
+      {
+        dayInitials: "MO",
+        start: 10,
+        end: 11,
+      },
+      {
+        dayInitials: "TU",
+        start: 10,
+        end: 11,
+      },
+    ];
+
+    const mockedResult = getWorkerPayment(mockedWorkerSchedule);
+
+    if (mockedResult !== 30) throw new Error();
+  });
+
+  it("Format Data works as expected", () => {
+    const mockedText =
+      "JENNIFER=TH05:00-11:00,SA09:00-13:00,SU10:00-17:00\r\nPETER=TU11:00-13:00,WE08:00-15:00,FR10:00-16:00";
+
+    const mockedResult = formatData(mockedText);
+
+    const mockedResultExpected = [
+      {
+        name: "JENNIFER",
+        schedule: [
+          {
+            dayInitials: "TH",
+            start: "05",
+            end: "11",
+          },
+          {
+            dayInitials: "SA",
+            start: "09",
+            end: "13",
+          },
+          {
+            dayInitials: "SU",
+            start: "10",
+            end: "17",
+          },
+        ],
+      },
+      {
+        name: "PETER",
+        schedule: [
+          {
+            dayInitials: "TU",
+            start: "11",
+            end: "13",
+          },
+          {
+            dayInitials: "WE",
+            start: "08",
+            end: "15",
+          },
+          {
+            dayInitials: "FR",
+            start: "10",
+            end: "16",
+          },
+        ],
+      },
+    ];
+
+    if (!compareObjects(mockedResult, mockedResultExpected)) throw new Error();
+  });
+
+  it("Renders page correctly", () => {
+    window.onload = function () {
+      let loadedContainer = document.body.innerHTML;
+
+      let container = new DOMParser().parseFromString(
+        loadedContainer,
+        "text/html"
+      ).body;
+
+      const button = container.querySelector("button");
+      const errorMessage = container.querySelector("#error-message");
+      const list = container.querySelector("#list-results");
+
+      if (button.innerText !== "Calculate") throw new Error();
+      if (errorMessage.innerText !== "") throw new Error();
+      if (list.innerText !== "") throw new Error();
+    };
+  });
+})();

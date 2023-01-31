@@ -23,10 +23,14 @@ All the requirements are described on the email
 
 ### Technologies to use
 
-Because the software requirements are not that complex, and it should be able to run without any installation or use of package manager, it was decided to use HTML5 for the DOM, CSS3 for styling and Vanilla JavaScript so it can run on any modern browser. Because on the requirements it was explicitly said that the use of external libraries is not allowed, so CSS Frameworks such as bootstrap or JS libraries as JQuery won't be used.
+Because the software requirements are not that complex, and it should be able to run without any installation or use of package manager, it was decided to use HTML5 for the DOM, CSS3 for styling and Vanilla JavaScript so it can run on any modern browser. Because on the requirements it was explicitly said that the use of external libraries is not allowed, so CSS Frameworks such as bootstrap or JS libraries as JQuery won't be used. As said before, because the software requeriments are not complex, typical JS architecture will be used, where UI is placed at the center of the development.
 
 ## Usage
 
 Download/Clone the files on the repository, and then open the index.html file with preferred browser.
 
 Upload your .txt file on the format NAME=DDHH:MM-HH:MM,DDHH:MM-HH:MM, our you can use the sample file on the repository.
+
+### Testing
+
+Because external libraries/frameworks is not allowed, it was decided to create own tests, doing something similar of what Jest does, this tests were added on ./scripts file, and run when the file is opened, this is done for not to create modules and make more complex the software. There was unit testing about the functions used, and about the page render as well.
